@@ -83,7 +83,7 @@ bot.dialog('/', function (session) {
         session.send(`https://www.youtube.com/watch?v=nEjPDS8Jp1E&t=1s`);
       break;
       case lcMessage.contains('i love you'):
-        session.send(`I love you too! (heart) (hearteyes)`);
+        session.send('I love you too! ' + session.message.user.name + '(heart) (hearteyes)');
       break;
       case lcMessage.contains('kucaaa'):
         randomPuppy()
