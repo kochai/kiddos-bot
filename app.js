@@ -47,6 +47,7 @@ String.prototype.contains = function(content){
 bot.dialog('/', function (session) {
   let lcMessage = session.message.text.toLowerCase();
   console.log(lcMessage);
+  console.log(session.message);
   // prevent replying unless mentioned
   if (lcMessage.contains(process.env.BOT_ID)) {
 
@@ -80,6 +81,9 @@ bot.dialog('/', function (session) {
       break;
       case lcMessage.contains('iva'):
         session.send(`https://www.youtube.com/watch?v=nEjPDS8Jp1E&t=1s`);
+      break;
+      case lcMessage.contains('i love you'):
+        session.send(`I love you too! (heart) (hearteyes)`);
       break;
       case lcMessage.contains('kucaaa'):
         randomPuppy()
