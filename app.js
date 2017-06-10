@@ -45,7 +45,6 @@ String.prototype.contains = function(content){
 
 bot.dialog('/', function (session) {
   let lcMessage = session.message.text.toLowerCase();
-  console.log(message.user);
   console.log(lcMessage);
   // prevent replying unless mentioned
   if (lcMessage.contains(process.env.BOT_ID)) {
