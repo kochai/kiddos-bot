@@ -116,7 +116,7 @@ bot.dialog('/', function (session) {
             session.send('Trenutno u ' + result[0].location.name + ' je ' + result[0].current.temperature + ' stepeni, najviša dnevna temperatura će biti ' + result[0].forecast[0].high + ' stepeni, a najniža ' + result[0].forecast[0].low + ". Sutra se očekuje najviša temperatura od " + result[0].forecast[1].high + " stepeni.");
           });
 
-        } else if {
+        } else {
           var pattern = /vreme\b(.*)\b/;
           var city = lcMessage.match(pattern)[1];
 
