@@ -45,7 +45,8 @@ String.prototype.contains = function(content){
 
 bot.dialog('/', function (session) {
   let lcMessage = session.message.text.toLowerCase();
-
+  console.log(message.user);
+  console.log(lcMessage);
   // prevent replying unless mentioned
   if (lcMessage.contains(process.env.BOT_ID)) {
 
@@ -115,7 +116,7 @@ bot.dialog('/', function (session) {
             session.send('Trenutno u ' + result[0].location.name + ' je ' + result[0].current.temperature + ' stepeni, najviša dnevna temperatura će biti ' + result[0].forecast[0].high + ' stepeni, a najniža ' + result[0].forecast[0].low + ". Sutra se očekuje najviša temperatura od " + result[0].forecast[1].high + " stepeni.");
           });
 
-        } else {
+        } else if {
           var pattern = /vreme\b(.*)\b/;
           var city = lcMessage.match(pattern)[1];
 
