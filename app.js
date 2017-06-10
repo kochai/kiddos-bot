@@ -1,27 +1,28 @@
 require('dotenv').config();
-var restify = require('restify');
-var builder = require('botbuilder');
-var weather = require('weather-js');
-var parser = require('rss-parser');
-var apod = require('nasa-apod');
+const restify = require('restify');
+const builder = require('botbuilder');
+const weather = require('weather-js');
+const parser = require('rss-parser');
+const apod = require('nasa-apod');
+const randomPuppy = require('random-puppy');
 
 //=========================================================
 // Bot Setup
 //=========================================================
 
 // Setup Restify Server
-var server = restify.createServer();
+const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 8080, function () {
    console.log('%s listening to %s', server.name, server.url);
 });
 
 // Create chat bot
-var connector = new builder.ChatConnector({
+const connector = new builder.ChatConnector({
     appId: process.env.APP_ID,
     appPassword: process.env.APP_PW
 });
 
-var bot = new builder.UniversalBot(connector);
+const bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
 // Bot on
@@ -79,6 +80,12 @@ bot.dialog('/', function (session) {
       break;
       case lcMessage.contains('iva'):
         session.send(`https://www.youtube.com/watch?v=nEjPDS8Jp1E&t=1s`);
+      break;
+      case lcMessage.contains('kucaaa'):
+        randomPuppy()
+            .then(url => {
+                session.send(url);
+            })
       break;
       case lcMessage.contains('nasa pod'):
         var response = '';
