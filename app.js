@@ -83,7 +83,21 @@ bot.dialog('/', function (session) {
         session.send(`https://www.youtube.com/watch?v=nEjPDS8Jp1E&t=1s`);
       break;
       case lcMessage.contains('i love you'):
-        session.send('I love you too ' + session.message.user.name + '! (heart) (hearteyes)');
+        var responseName = '';
+        if (session.message.user.name == 'Iva Burg') {
+          responseName = "Iva";
+        } else if (session.message.user.name == 'Marko Kovacevic') {
+          responseName = 'Mare';
+        } else if (session.message.user.name == 'Velimir Kisic') {
+          responseName = 'Velja';
+        } else if (session.message.user.name == 'Attila Pravda') {
+          responseName = 'Attila';
+        } else if (session.message.user.name == 'Лазар Михаиловић') {
+          responseName = 'Lazo';
+        } else {
+          responseName = session.message.user.name;
+        }
+        session.send('I love you too ' + responseName + '! (heart) (hearteyes)');
       break;
       case lcMessage.contains('kucaaa'):
         randomPuppy()
