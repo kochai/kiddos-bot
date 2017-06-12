@@ -76,7 +76,7 @@ bot.dialog('/', function (session) {
       case lcMessage.contains('laza'):
         session.send(`https://www.youtube.com/watch?v=RnqAXuLZlaE`);
       break;
-      case lcMessage.contains('zar nije te stid?'):
+      case lcMessage.contains('zar nije te stid?' || 'zar nije te sram?'):
         session.send(`Ne, ne, ne o ne ne`);
       break;
       case lcMessage.contains('mare'):
