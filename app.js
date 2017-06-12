@@ -80,6 +80,12 @@ bot.dialog('/', function (session) {
       case lcMessage.contains('zar nije te sram?'):
         session.send(`Ne, ne, ne o ne ne`);
       break;
+      case lcMessage.contains('rodices mu sina'):
+        session.send(`kralja kokaina`);
+      break;
+      case lcMessage.contains('ti rodices mu decu'):
+        session.send(`belu kao sneg \n\n o mama!`);
+      break;
       case lcMessage.contains('mare'):
         session.send(`https://www.youtube.com/watch?v=GZR58d77a4A`);
       break;
