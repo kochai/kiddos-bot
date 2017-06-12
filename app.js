@@ -89,6 +89,9 @@ bot.dialog('/', function (session) {
       case lcMessage.contains('mare'):
         session.send(`https://www.youtube.com/watch?v=GZR58d77a4A`);
       break;
+      case lcMessage.contains('ta stvar'):
+        session.send('https://www.youtube.com/watch?v=T6QKqFPRZSA');
+      break;
       case lcMessage.contains('iva'):
         session.send(`https://www.youtube.com/watch?v=nEjPDS8Jp1E&t=1s`);
       break;
