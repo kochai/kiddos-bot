@@ -113,6 +113,8 @@ bot.dialog('/', function (session) {
         session.send('I love you too ' + responseName + '! (heart) (hearteyes)');
       break;
       case lcMessage.contains('kucaaa'):
+      case lcMessage.contains('kucaa'):
+      case lcMessage.contains('kuca'):
         randomPuppy()
             .then(url => {
                 session.send(url);
